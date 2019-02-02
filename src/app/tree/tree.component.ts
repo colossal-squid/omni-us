@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TreeStruct } from '../constants.service';
 
 @Component({
@@ -6,14 +6,11 @@ import { TreeStruct } from '../constants.service';
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.css']
 })
-export class TreeComponent implements OnInit {
+export class TreeComponent {
 
   @Input()
-  treeData: TreeStruct = {};
+  public treeData: TreeStruct = {};
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,12 +1,13 @@
 import {ValidatorFn, AbstractControl} from '@angular/forms';
 
-export function jsonValidator (control: AbstractControl): {[key: string]: any} | null {
-      let invalid = true, msg = '';
+export function jsonValidator(control: AbstractControl): {[key: string]: any} | null {
+      let invalid = true;
+      let msg = '';
       try {
-        const parsed = JSON.parse(control.value);
+        JSON.parse(control.value);
         invalid = false;
       } catch (e) {
           msg = e;
       }
-      return invalid ? {'invalidJson': {value: control.value, msg: msg}} : null;
-    };
+      return invalid ? {invalidJson: {value: control.value, msg}} : null;
+    }

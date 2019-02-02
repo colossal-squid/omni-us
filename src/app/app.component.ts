@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { TreeStruct } from './constants.service';
 
 @Component({
@@ -6,14 +6,13 @@ import { TreeStruct } from './constants.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnChanges {
+export class AppComponent {
   public treeData: TreeStruct = {};
-  
-  public onTextChange(text:string) {
-    this.treeData = <TreeStruct>JSON.parse(text);
+
+  public onTextChange(text: string) {
+    if (typeof text === 'string') {
+      this.treeData = JSON.parse(text) as TreeStruct;
+    }
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-  }
 }

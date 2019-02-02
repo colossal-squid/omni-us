@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
-export interface TreeStruct {[key:string]:string|number|boolean|TreeStruct}
+export interface TreeStruct {[key: string]: string|number|boolean|TreeStruct; }
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConstantsService {
-  public get DEFAULT_TEXT():TreeStruct {
+  public get DEFAULT_TEXT(): TreeStruct {
     return {
       a: true,
       b: 1,
@@ -24,6 +24,6 @@ export class ConstantsService {
           }
         }
       }
-    }
+    };
   }
 }

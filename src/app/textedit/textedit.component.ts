@@ -10,28 +10,29 @@ import { jsonValidator } from '../core/form/json-validator';
 })
 export class TexteditComponent implements OnInit {
 
-  @Output() change: EventEmitter<TreeStruct> = new EventEmitter();
-  
+  @Output() textChange: EventEmitter<TreeStruct> = new EventEmitter();
+
   public textedit: FormControl;
   public form: FormGroup;
-  
-  constructor(private constants:ConstantsService) { }
+
+  constructor(private constants: ConstantsService) { }
 
   ngOnInit() {
     const text = JSON.stringify(this.constants.DEFAULT_TEXT, null, 2);
     this.textedit = new FormControl(text, [
       jsonValidator
-    ])
+    ]);
     this.form = new FormGroup({
-      'textedit': this.textedit
+      textedit: this.textedit
     });
     this.form.valueChanges.subscribe(this.onChanges.bind(this));
     this.onChanges();
   }
 
-  private onChanges () {
+  private onChanges() {
+    const value = this.textedit.value;
     if (!this.textedit.invalid) {
-      this.change.emit(this.textedit.value);
+      this.textChange.emit(value);
     }
   }
 

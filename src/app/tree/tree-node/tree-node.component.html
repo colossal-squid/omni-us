@@ -1,0 +1,10 @@
+<!-- Use three types of inputs to display the values: check boxes for booleans, 
+  input type numbers for numbers and text boxes for strings. -->
+  {{levelPrefix}}
+  <input *ngIf="nodeType && isLeaf(nodeType)"
+        readonly disabled 
+        [type]="getInputType(nodeType)"
+        [checked]="node" 
+        [value]="node"/>
+  <app-tree-node-group *ngIf="nodeType && !isLeaf(nodeType)" [level]="level ? level + 1 : 1" [tree]="node"></app-tree-node-group>
+  

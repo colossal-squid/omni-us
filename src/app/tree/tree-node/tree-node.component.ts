@@ -13,12 +13,12 @@ export class TreeNodeComponent implements OnChanges {
   @Input() node: number|string|boolean|TreeStruct;
   @Input() key?: string;
   @Input() level?: number;
-  public nodeType: string;
+  public nodeType: TreeNodeType;
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.nodeType = typeof this.node;
+    this.nodeType = <TreeNodeType> typeof this.node;
   }
 
   get levelPrefix() {

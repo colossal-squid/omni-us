@@ -1,0 +1,12 @@
+.textedit--info {
+    flex: 0 0 100px;
+}
+
+.textedit--text {
+    flex: 1 0 0;
+}
+
+.textedit--text > textarea {
+    height: 100%;
+    width: 100%;
+}

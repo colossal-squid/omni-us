@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TreeStruct } from './constants.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'omni-us-challenge';
+  public treeData: TreeStruct = {};
+  
+  public onTextChange(text:string) {
+    this.treeData = JSON.parse(text);
+  }
 }

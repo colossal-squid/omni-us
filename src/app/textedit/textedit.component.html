@@ -1,0 +1,18 @@
+<section class="textedit--info">
+
+<p>Please put your nested object text here</p>
+<p>Feel free to modify contents</p>
+
+</section>
+<form *ngIf="form"  class="textedit--text" [formGroup]="form">
+    <div *ngIf="textedit.invalid && (textedit.dirty || textedit.touched)"
+    class="alert alert-danger">
+    <div *ngIf="textedit.errors.invalidJson">
+      JSON has to be valid {{textedit.errors.invalidJson.msg}}
+    </div>
+</div>
+
+<textarea formControlName="textedit" id="textedit" 
+          name="textedit" [(ngModel)]="text">
+</textarea>
+</form>

@@ -18,7 +18,6 @@ import { TreeNodeGroupComponent } from './tree/tree-node-group/tree-node-group.c
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

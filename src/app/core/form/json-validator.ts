@@ -1,4 +1,4 @@
-import {ValidatorFn, AbstractControl} from '@angular/forms';
+import { AbstractControl} from '@angular/forms';
 
 export function jsonValidator(control: AbstractControl): {[key: string]: any} | null {
       let invalid = true;

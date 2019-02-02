@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TreeNodeGroupComponent } from './tree-node-group.component';
+import { TreeNodeComponent } from '../tree-node/tree-node.component';
 
 describe('TreeNodeGroupComponent', () => {
   let component: TreeNodeGroupComponent;
@@ -8,7 +9,7 @@ describe('TreeNodeGroupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TreeNodeGroupComponent ]
+      declarations: [ TreeNodeGroupComponent, TreeNodeComponent ]
     })
     .compileComponents();
   }));

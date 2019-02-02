@@ -1,11 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TreeComponent } from './tree/tree.component';
+import { TexteditComponent } from './textedit/textedit.component';
+import { TreeNodeComponent } from './tree/tree-node/tree-node.component';
+import { TreeNodeGroupComponent } from './tree/tree-node-group/tree-node-group.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        TreeComponent,
+        TexteditComponent,
+        TreeNodeComponent,
+        TreeNodeGroupComponent
       ],
     }).compileComponents();
   }));
@@ -16,16 +26,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'omni-us-challenge'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('omni-us-challenge');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to omni-us-challenge!');
-  });
 });

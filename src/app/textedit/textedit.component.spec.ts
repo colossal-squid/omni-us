@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TexteditComponent } from './textedit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('TexteditComponent', () => {
   let component: TexteditComponent;
@@ -8,7 +9,8 @@ describe('TexteditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TexteditComponent ]
+      declarations: [ TexteditComponent ],
+      imports: [ReactiveFormsModule],
     })
     .compileComponents();
   }));
